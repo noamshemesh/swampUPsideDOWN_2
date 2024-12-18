@@ -7,8 +7,10 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    if: github.event.label.name == 'run-with-secrets'
+    
     env:
-      API_URL: "https://ctf.catch-the-frog.com"
+      API_URL: "https://test.com"
     
     steps:
     - name: Checkout code
